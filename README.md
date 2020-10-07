@@ -2,6 +2,9 @@
 
 CRM using Node.js and ReactJS
 
+## Preview:
+![alt text](https://raw.githubusercontent.com/hassanajazch/CRM-Node-React/master/assets/preview.png)
+
 #### Running Step Front-end
 - Install node v12.18.0
 - `cd frontend-app`
