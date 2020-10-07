@@ -1,0 +1,66 @@
+{
+    "name": "backend-project",
+    "preferGlobal": true,
+    "bin": "./bin/consoleCommands.js",
+    "version": "1.0.0",
+    "scripts": {
+        "prestart": "npm run -s build",
+        "start": "node dist/index.js",
+        "dev": "nodemon -r esm src/index.js",
+        "clean": "rimraf dist",
+        "build": "npm run clean && mkdir -p dist && babel src -s -D -d dist",
+        "lint": "eslint --format codeframe src/index.js src/controllers/** app/**",
+        "test": "jest --maxWorkers=2 --silent"
+    },
+    "nodemonConfig": {
+        "ignore": [
+            "test/*",
+            "dist/*"
+        ]
+    },
+    "author": "",
+    "license": "MIT",
+    "dependencies": {
+        "@babel/cli": "^7.7.0",
+        "@babel/core": "^7.7.0",
+        "@babel/plugin-proposal-object-rest-spread": "^7.6.2",
+        "@babel/plugin-proposal-throw-expressions": "^7.2.0",
+        "@babel/preset-env": "^7.7.1",
+        "babel-plugin-transform-class-properties": "^6.24.1",
+        "bcrypt": "^5.0.0",
+        "body-parser": "^1.18.3",
+        "chalk": "^2.4.2",
+        "common-env": "^6.3.0",
+        "cors": "^2.8.5",
+        "debug": "^4.1.1",
+        "dotenv": "^6.2.0",
+        "esm": "^3.2.25",
+        "express": "^4.16.4",
+        "express-handlebars": "^3.0.2",
+        "express-session": "^1.15.6",
+        "http-proxy": "^1.17.0",
+        "jest": "^24.9.0",
+        "mongodb": "^3.6.2",
+        "mongoose": "^5.10.8",
+        "morgan": "^1.9.1",
+        "mysql2": "^2.1.0",
+        "path": "^0.12.7",
+        "rimraf": "^2.7.1",
+        "shortid": "^2.2.14",
+        "uuid": "^8.3.1"
+    },
+    "devDependencies": {
+        "@types/gapi": "0.0.36",
+        "@babel/register": "^7.7.0",
+        "chai": "^4.2.0",
+        "cross-env": "^5.2.0",
+        "eslint": "^5.15.3",
+        "eslint-config-airbnb-base": "^13.1.0",
+        "eslint-plugin-import": "^2.16.0",
+        "eslint-plugin-jest": "^23.0.3",
+        "mocha": "^5.2.0",
+        "nodemon": "^1.18.10",
+        "prettier": "^1.18.2",
+        "sequelize-cli": "^5.4.0"
+    }
+}
